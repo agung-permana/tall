@@ -10,10 +10,12 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home')->middleware('verified')->name('home');
+Route::view('/', 'welcome')->middleware('verified')->name('home');
 Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 Auth::routes(['verify' => true]);
+
+Route::get('account/edit', \App\Http\Livewire\Account\Edit::class)->name('settings');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
