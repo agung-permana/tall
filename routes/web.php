@@ -10,7 +10,7 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->middleware('verified')->name('home');
+Route::view('/', 'welcome')->name('home')->middleware('verified');
 Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 Auth::routes(['verify' => true]);

@@ -15,6 +15,9 @@ class Edit extends Component
 
     public function update()
     {
+        $this->validate([
+            'name' => 'required',
+        ]);
         auth()->user()->update([
             'name' => $this->name
         ]);
