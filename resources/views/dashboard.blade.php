@@ -5,7 +5,7 @@
 
         <div class="flex items-center justify-center">
             <div>
-                <p class="font-bold">Hi, {{ auth()->user()->name }}</p>
+                <p class="font-bold">Hallo, {{ auth()->user()->name }}</p>
             </div>
         </div>
     </div>
